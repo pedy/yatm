@@ -1,4 +1,5 @@
 #include <iostream>
+#include "task.h"
 
 using namespace std;
 /* Left:
@@ -24,7 +25,12 @@ int main(int argc, char* argv[])
             1: Switch
             2: Switches requiring data
         */
-       cout << "YATM: Yet Another Task Manager" << endl;
+        cout << "YATM: Yet Another Task Manager" << endl;
+
+        task objTask ("Build all files");
+
+        int f = 4;
+
     }
     catch(const std::exception& e)
     {
