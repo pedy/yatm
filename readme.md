@@ -24,6 +24,12 @@ It's an interview process assignment.
 ## How
 
 ### Build and Use
+```
+$ cd build
+$ cmake ..
+$ cmake --build .
+$ ./yatm
+```
 
 ### I made it
 
