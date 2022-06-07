@@ -2,12 +2,12 @@
 
 List::List()
 {
-    cout << "Default constructor" << endl;
+    //TODO cout << "Default constructor" << endl;
 }
 
 List::List(string strFileName)
 {
-    cout << "fileName constructor: " << strFileName << endl;
+    //TODO cout << "fileName constructor: " << strFileName << endl;
 }
 
 bool List::isEmpty()
@@ -50,6 +50,7 @@ bool List::addTask(string strText)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        return false;
     }
 }
 
@@ -123,4 +124,27 @@ bool List::editTask(int iID, string strNewText)
     }
     
     return true;
+}
+
+int List::searchForTask(string strSearchTerm)
+{
+    int iFoundCount = 0;
+    try
+    {
+        //TODO indexing to search better?
+        for (auto item : tlist)
+            if (item.second.getText().find(strSearchTerm) != string::npos) //TODO case insensitive
+            {
+                cout << "Found " << item.first << ") " << item.second.getText() << endl;
+                ++iFoundCount;
+            }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    if (iFoundCount == 0)
+        cout << "Not found." << endl;
+
+    return iFoundCount;
 }

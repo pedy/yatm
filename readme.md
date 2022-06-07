@@ -31,6 +31,7 @@ It's an interview process assignment.
 - Build notes
 - Search for 'temp' comments
 - Try-catch
+- Review the rest using TODOTree extension
 - Any warnings? (esp. on return data types)
 - VSCode problem matcher relative path (double click on problem)
 

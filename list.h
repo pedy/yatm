@@ -19,7 +19,7 @@ public:
 	bool showAll();
 	bool addTask(string strText);
 	bool markTask(int iID);
-	int searchForTask(string strSearchTerm); //or ret bool
+	int searchForTask(string strSearchTerm);
 	bool editTask(int iID, string strNewText);
 	bool isEmpty();
 };

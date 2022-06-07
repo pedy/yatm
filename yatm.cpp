@@ -28,7 +28,7 @@ void showMainOptions()
     << "    [m]ark" 
     << "    [s]earch"
     << "    [q]uit"  //TODO Other useful actions: unmark, clear marked items, ...
-    << endl << "? ";
+    << endl << "Enter one of highlighted characters: ";
 
     return;
 }
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
                 case 'a':
                     //cout << "add" << endl;
 
-                    cout << "Enter: " ;
+                    cout << "Enter task text: " ;
                     //cin.getline(strTemp, 400); //TODO define this max
                     strTemp = "";
                     getline(cin, strTemp);
@@ -98,7 +98,11 @@ int main(int argc, char* argv[])
                     }
                     break;
                 case 's':
-                    cout << "search" << endl;
+                    cout << "Enter the search term (case sensitive): ";
+                    strTemp = "";
+                    getline(cin, strTemp);
+                    lst.searchForTask(strTemp);
+                    //TODO check output
                     break;
                 case 'q':
                     cout << "quit" << endl;
