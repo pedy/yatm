@@ -22,6 +22,7 @@
             "args": ["--build", "."],
             "dependsOn": ["configure"],
             "dependsOrder": "sequence",
+            "problemMatcher":"$gcc",
             "group": {
                 "kind": "build",
                 "isDefault": true
