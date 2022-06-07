@@ -21,12 +21,14 @@ using namespace std;
 */
 void showMainOptions()
 {
-    cout << endl << "-----------------------------------------------------------------------" << endl;
-    cout << "a) add"  ;//  << endl;
-    cout << "\t\te) edit" ;//<< endl;
-    cout << "\t\tl) list" ;//<< endl;
-    cout << "\t\tm) mark" ;//<< endl;
-    cout << "\t\tq) quit" << endl << "? ";
+    cout << endl << "---------------------------------------------------------" << endl
+    <<     "[a]dd"  
+    << "    [e]dit" 
+    << "    [l]ist" 
+    << "    [m]ark" 
+    << "    [s]earch"
+    << "    [q]uit"  //TODO Other useful actions: unmark, clear marked items, ...
+    << endl << "? ";
 
     return;
 }
@@ -35,6 +37,7 @@ int main(int argc, char* argv[])
     try
     {
         char option;
+        int iID = 0;
         string strTemp;
         Task objTemp;
         List lst;
@@ -42,8 +45,7 @@ int main(int argc, char* argv[])
         {
             showMainOptions();
             option = std::getc(stdin);
-            cin.ignore();
-            //cout << "Entered: " << option << endl;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); //TODO This was a copy/paste! Get to know what it does.
             switch (option)
             {
                 case 'a':
@@ -51,6 +53,7 @@ int main(int argc, char* argv[])
 
                     cout << "Enter: " ;
                     //cin.getline(strTemp, 400); //TODO define this max
+                    strTemp = "";
                     getline(cin, strTemp);
                     //cin >> strTemp;
                     //objTemp.SetText(strTemp);
@@ -60,14 +63,42 @@ int main(int argc, char* argv[])
 
                     break;
                 case 'e':
-                    cout << "edit" << endl;
+                    if (lst.isEmpty())
+                        cout << "There are no items." << endl;
+                    else
+                    {
+                        lst.showAll();
+                        cout << "Enter the item ID: " ;
+                        cin >> iID; //TODO check
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //TODO This was a copy/paste! Get to know what it does.
+                        cout << "Enter the new text: ";
+                        strTemp = "";
+                        getline(cin, strTemp);
+                        lst.editTask(iID, strTemp);
+                        //TODO check result
+                    }
                     break;
                 case 'l':
-                    //cout << "list" << endl;
-                    lst.showAll();
+                    if (lst.isEmpty())
+                        cout << "There are no items." << endl;
+                    else
+                        lst.showAll();
                     break;
                 case 'm':
-                    cout << "mark" << endl;
+                    if (lst.isEmpty())
+                        cout << "There are no items." << endl;
+                    else
+                    {
+                        lst.showAll(); //TODO show only unmarked
+                        cout << "Enter the item ID: " ;
+                        cin >> iID; //TODO check
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //TODO This was a copy/paste! Get to know what it does.
+                        lst.markTask(iID);
+                        //TODO check result
+                    }
+                    break;
+                case 's':
+                    cout << "search" << endl;
                     break;
                 case 'q':
                     cout << "quit" << endl;

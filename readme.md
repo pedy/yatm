@@ -30,6 +30,8 @@ It's an interview process assignment.
 ## TODO
 - Build notes
 - Search for 'temp' comments
+- Try-catch
+- Any warnings? (esp. on return data types)
 - VSCode problem matcher relative path (double click on problem)
 
 ## More

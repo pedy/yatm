@@ -2,7 +2,7 @@
 #define _LIST_H_
 
 #include <string>
-#include <vector>
+#include <map>
 #include "task.h"
 
 //using namespace std;
@@ -10,7 +10,8 @@
 class List
 {
 private:
-	vector<Task> tlist;
+	map<int, Task> tlist; //TODO unsigned
+	//Assign int on load, trim it before writing to file (to handle remove and ID range)
 	bool showTask(int iID);
 public:
 	List();
@@ -20,6 +21,7 @@ public:
 	bool markTask(int iID);
 	int searchForTask(string strSearchTerm); //or ret bool
 	bool editTask(int iID, string strNewText);
+	bool isEmpty();
 };
 
 
