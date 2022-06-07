@@ -1,12 +1,22 @@
+#ifndef _TASK_H_
+#define _TASK_H_
+
 #include <string>
 #include <iostream>
 using namespace std;
 
-class task
+class Task
 {
     string strText;
     bool bChecked;
 
 public:
-    task(string text);
+    Task();
+    Task(string text);
+    bool setText(string text);
+    string getText();
+    bool mark();
+    bool isMarked();
 };
+
+#endif //_TASK_H_

@@ -27,6 +27,11 @@ It's an interview process assignment.
 
 ### I made it
 
+## TODO
+- Build notes
+- Search for 'temp' comments
+- VSCode problem matcher relative path (double click on problem)
+
 ## More
 - [ ] Unit Tests
-- [ ] GitHub Actions
+- [ ] GitHub Actions (Esp. macOS buil)
