@@ -1,4 +1,5 @@
 #include "task.h"
+#include <iostream>
 using namespace std;
 
 Task::Task()
@@ -9,20 +10,12 @@ Task::Task()
 
 Task::Task(string text)
 {
-    try
-    {
-        strText = text;
-        bChecked = false;
-    }
-    catch(const std::exception& e)
-    {
-        cerr << e.what() << '\n';
-    }
+    strText = text;
+    bChecked = false;
 }
 
 bool Task::setText(string text)
 {
-    //TODO limit input
     strText = text;
     return true;
 }
@@ -42,4 +35,10 @@ bool Task::isMarked()
 string Task::getText()
 {
     return strText;
+}
+
+void Task::reset()
+{
+    strText = "";
+    bChecked = false;
 }

@@ -21,26 +21,26 @@ As a user, you should be able to:
 ## Why
 It's an interview process assignment.
 
-## How
-
-### Build and Use
+## Build and Usage
 ```
 $ cd build
 $ cmake ..
 $ cmake --build .
 $ ./yatm
 ```
+*(You can use `.\yatm.exe` in Windows)*
 
-### I made it
 
-## TODO
-- Build notes
-- Search for 'temp' comments
-- Try-catch
-- Review the rest using TODOTree extension
-- Any warnings? (esp. on return data types)
-- VSCode problem matcher relative path (double click on problem)
+## Some Techincal Debts
+- Search is case insensitive
+- Data file loading has bare minimum error handling
+- Data file sits just next to the execution path
+- Used `cout` at many places which is better to use `cerr`
+- Not tested on macOS
 
-## More
-- [ ] Unit Tests
-- [ ] GitHub Actions (Esp. macOS buil)
+## Potential Improvements
+- Unmark item
+- Delete item
+- Clear marked items
+- Due date for each item
+- Improve search speed

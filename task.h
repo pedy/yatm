@@ -2,7 +2,6 @@
 #define _TASK_H_
 
 #include <string>
-#include <iostream>
 using namespace std;
 
 class Task
@@ -17,6 +16,7 @@ public:
     string getText();
     bool mark();
     bool isMarked();
+    void reset();
 };
 
 #endif //_TASK_H_
