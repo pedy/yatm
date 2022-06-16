@@ -12,9 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Go to build folder
-      run: cd build
-    - name: Use CMake to make everything ready
-      run: cmake ..
-    - name: build
-      run: cmake --build .
+    
+    - name: Build using CMake
+      working-directory: ./build
+      run: |
+        cmake ..
+        cmake --build .
