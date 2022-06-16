@@ -36,7 +36,6 @@ $ ./yatm
 - Data file loading has bare minimum error handling
 - Data file sits just next to the execution path
 - Used `cout` at many places which is better to use `cerr`
-- Not tested on macOS
 
 ## Potential Improvements
 - Unmark item
